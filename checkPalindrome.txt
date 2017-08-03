@@ -1,0 +1,10 @@
+boolean checkPalindrome(String inputString) {
+        if(inputString.length() < 2){
+            return true;
+        }
+        else if(inputString.charAt(0) == inputString.charAt(inputString.length() - 1))
+        {
+            return checkPalindrome(inputString.substring(1,inputString.length() - 1));
+        }
+        return false;
+}
