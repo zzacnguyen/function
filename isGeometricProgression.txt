@@ -1,0 +1,7 @@
+boolean isGeometricProgression(int[] sequence) {
+    float x = (float)sequence[1]/(float)sequence[0];
+    for(int i=2; i < sequence.length; i++)
+        if(sequence[i] != (float)sequence[i-1]*x)
+            return false;
+    return true;
+}

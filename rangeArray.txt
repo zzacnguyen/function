@@ -1,0 +1,9 @@
+ArrayList<Integer> rangeArray(int l, int r, int step) {
+
+  ArrayList<Integer> result = new ArrayList();
+  while (l < r) {
+    result.add(l);
+    l +=  step ;
+  }
+  return result;
+}

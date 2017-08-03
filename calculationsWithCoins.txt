@@ -1,0 +1,13 @@
+int calculationsWithCoins(int a, int b, int c) {
+    if(a==b && b==c)
+        return 3;
+    else if(a == b && b!=c || b==c && b!=a || a==c && a!=b){
+        if(a+b == c || b+c == a)
+            return 4;
+        else
+            return 5;
+    }
+    if(a == b+c || b == a+c || c == a+b)
+        return 6;
+    return 7;
+}

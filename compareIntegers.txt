@@ -1,0 +1,16 @@
+String compareIntegers(String a, String b) {
+
+        if (a.length() > b.length()) {
+            return "greater";
+        }
+        if (a.length() < b.length()) {
+            return "less";
+        }
+        if (a.compareTo(b) < 0) {
+            return "less";
+        }
+        if (a.compareTo(b) > 0) {
+            return "greater";
+        }
+        return "equal";
+    }

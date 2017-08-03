@@ -1,0 +1,16 @@
+ArrayList<Integer> sortedIndices(ArrayList<Integer> a) {
+  ArrayList<Integer> indices = new ArrayList<>();
+  for (int i = 0; i < a.size(); i++) {
+    indices.add(i);
+  }
+  for (int i = 0; i < a.size() - 1; i++) {
+    for (int j = 0; j < a.size() - i - 1; j++) {
+      if (a.get(indices.get(j)) > a.get(indices.get(j + 1))) {
+        int tmp = indices.get(j + 1);
+        indices.set(j + 1, indices.get(j));
+        indices.set(j, tmp);
+      }
+    }
+  }
+  return indices;
+}

@@ -1,0 +1,33 @@
+int[] weakNumbers(int n) {
+    int cnt = 0, cntweak = 0, max = 0, num = 0;
+    int[][] d = new int[n][2];
+    int[] rs = new int[2];
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= i; j++) {
+            if (i % j == 0) {
+                cnt++;
+            }
+        }
+        d[i - 1][0] = cnt;
+        for (int j = 1; j < i; j++) {
+            if (d[j - 1][0] > d[i - 1][0]) {
+                    cntweak++;
+                }
+        }
+        d[i - 1][1] = cntweak;
+        cntweak = 0;
+        cnt = 0;
+    }
+    for (int i = 0; i < n; i++) {
+        if (d[i][1] == max) {
+            num++;
+        }
+        if (d[i][1] > max) {
+            max = d[i][1];
+            num = 1;
+        }
+    }
+    rs[0] = max;
+    rs[1] = num;
+    return rs;
+}

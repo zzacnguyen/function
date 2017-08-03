@@ -1,0 +1,3 @@
+String replaceFirstDigitRegExp(String input) {
+    return input.replaceFirst("[0-9]","#");
+}

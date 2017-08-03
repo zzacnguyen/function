@@ -1,0 +1,48 @@
+int[] gravitation(String[] rows) {
+        int[] ans = new int[rows[0].length()];
+        char[] row = new char[4];
+        for (int r = 0; r < rows[0].length(); r++) {
+            int count = 0;
+            int k = 3;
+            int rocks = 0;
+            int aster = -1;
+            boolean hasBefore = true;
+            for (int i = 0; i <= 3; i++) {
+                row[i] = rows[i].charAt(r);
+            }
+            for (int i = 0; i <= 3; i++) {
+                if (row[i] == '.') {
+                    rocks++;
+                }
+            }
+
+            if (rocks == 4) {
+                ans[r] = 0;
+            } else {
+                for (int d = 1; d <= 3; d++) {
+
+                    while (row[k] == '.' && aster != 0) {
+                        for (int l = 0; l <= k - 1; l++) {
+                            row[k - l] = row[k - l - 1];
+
+
+                        }
+                        row[0] = '.';
+                        count++;
+
+
+                    }
+                    k--;
+                    aster = 0;
+                    for (int p = 0; p < k; p++) {
+                        if (row[p] == '#') {
+                            aster++;
+                        }
+                    }
+
+
+                }
+                ans[r] = count;
+            }
+
+        }

@@ -1,0 +1,8 @@
+int maxDigit(int n) {
+    String s = n+"";
+    int max = s.codePointAt(0);
+    for(int i = 1; i < s.length(); i++)
+        if(s.codePointAt(i) > max)
+            max = s.codePointAt(i);
+    return max - '0';
+}

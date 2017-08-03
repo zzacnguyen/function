@@ -1,0 +1,7 @@
+ArrayList<Integer> createArray(int size) {
+  ArrayList<Integer> result = new ArrayList<>();
+  for (int i = 0; i < size; i++) {
+    result.add(1);
+  }
+  return result;
+}
