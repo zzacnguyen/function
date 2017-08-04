@@ -1,0 +1,11 @@
+String insertDashes(String inputString) {
+    String s = "";
+    inputString += " ";
+    for(int i = 0; i < inputString.length(); i++){
+        if(inputString.charAt(i) >= 'A' && inputString.codePointAt(i+1) != 32)
+            s += inputString.charAt(i) + "-";
+        else
+            s += inputString.charAt(i);
+    }
+    return s.trim();
+}
